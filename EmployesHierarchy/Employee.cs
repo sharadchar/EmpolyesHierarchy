@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace EmployesHierarchy
 {
-    //[DebuggerDisplay("{EmployeeName}")]
+    [DebuggerDisplay("{EmployeeName}")]
     public class Employee
     {
         public string EmployeeName { get; set; }

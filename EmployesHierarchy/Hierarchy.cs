@@ -16,6 +16,11 @@ namespace EmployesHierarchy
             _objEmp = objEmp;
         }
 
+        /// <summary>
+        /// Genetate the hierarchy of the employes under the ManagerId provided
+        /// </summary>
+        /// <param name="managerId">Id if the Employee</param>
+        /// <returns>Employe Object Containing All The SubEmployes</returns>
         public Employee GetHierarchy(int managerId)
         {
             Employee managerHierachy = new Employee();
@@ -28,7 +33,7 @@ namespace EmployesHierarchy
             return managerHierachy;
         }
 
-        public List<Employee> GetSubordinatesHierarchy(int managerId)
+        private List<Employee> GetSubordinatesHierarchy(int managerId)
         {
             var subEmp = new List<Employee>(_objEmp.GetSubordinates(_employees, managerId));
             if (subEmp != null && subEmp.Any())

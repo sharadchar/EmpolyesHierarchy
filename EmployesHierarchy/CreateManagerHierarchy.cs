@@ -28,10 +28,11 @@ namespace EmployesHierarchy
         {
             try
             {
+                //Get the ManagerId To Generate the Hierarchy
                 int managerId = readInputId();
-                               
+                //Get the Employee Hierarchy                
                 Employee objEmp = _employeHierarchy.GetHierarchy(managerId);
-
+                //Create the Manager hierarch at console
                 CreateHierarchy(objEmp);
             }
             catch (Exception ex)
@@ -39,9 +40,12 @@ namespace EmployesHierarchy
                 Console.WriteLine(ex.Message + " - " + ex.InnerException.Message);
                 Console.ReadLine();
             }
-            Console.ReadLine();
         }
 
+        /// <summary>
+        /// Creates the Employes structure at Console
+        /// </summary>
+        /// <param name="objEmp"></param>
         private void CreateHierarchy(Employee objEmp)
         {
             try
@@ -51,7 +55,7 @@ namespace EmployesHierarchy
                 foreach (Employee subEmp in objEmp.Team)
                 {
                     Console.WriteLine(tabs + " | " + subEmp.EmployeeName);
-                    ListSubUser(subEmp);
+                    ListSubEmpo(subEmp);
                 }
 
                 Console.WriteLine("Want to exit (Y/N)");
@@ -67,6 +71,10 @@ namespace EmployesHierarchy
             }
         }
 
+        /// <summary>
+        /// Gets The ManagerId from the user
+        /// </summary>
+        /// <returns>Returs the id recieved from the user</returns>
         private int readInputId()
         {
             Console.WriteLine("Please Enter The ManagerId");
@@ -81,21 +89,20 @@ namespace EmployesHierarchy
             return empId;
         }
 
-
-
-        private void ListSubUser(Employee emplo)
+        /// <summary>
+        /// List The Sub Employes At The Console
+        /// </summary>
+        /// <param name="emplo">Employe entity</param>
+        private void ListSubEmpo(Employee emplo)
         {
-            //var level1Emp = new List<Employee>(_objEmp.GetSubordinates(_employees, emplo));
             if (emplo != null && emplo.Team != null && emplo.Team.Any())
             {
-                tabs.Append("\t");
-                
+                tabs.Append("\t");                
                 foreach (Employee emp in emplo.Team)
                 {
                     Console.WriteLine(tabs + " | " + emp.EmployeeName);
-                    ListSubUser(emp);
+                    ListSubEmpo(emp);
                 }
-
                 tabs.Remove(tabs.Length - 1, tab.Length);
             }
         }
