@@ -9,13 +9,16 @@ namespace EmployesHierarchy
     {
         private static StringBuilder tabs = new StringBuilder("\t");
         private static string tab = "\t";
-        private List<Employee> employees;
-        private Employee _objEmp;
 
-        public CreateManagerHierarchy(Employee objEmp, SetupEmployes dataObj)
+        private List<Employee> _employees;
+        private Employee _objEmp;
+        private Hierarchy _employeHierarchy;
+
+        public CreateManagerHierarchy(Employee objEmp, SetupEmployes setupEmp)
         {
-            employees = dataObj.GetEmployes();
             _objEmp = objEmp;
+            _employees = setupEmp.GetEmployes();            
+            _employeHierarchy = new Hierarchy(objEmp, setupEmp);            
         }
 
         /// <summary>
@@ -26,16 +29,10 @@ namespace EmployesHierarchy
             try
             {
                 int managerId = readInputId();
+                               
+                Employee objEmp = _employeHierarchy.GetHierarchy(managerId);
 
-                List<Employee> subordinates = new List<Employee>(_objEmp.GetSubordinates(employees, managerId));
-
-                Console.WriteLine(employees.FirstOrDefault(x => x.Id == managerId).EmployeeName);
-
-                foreach (Employee obj in subordinates)
-                {
-                    Console.WriteLine(tabs + " | " + obj.EmployeeName);
-                    ListSubUser(_objEmp, obj.Id);
-                }
+                CreateHierarchy(objEmp);
             }
             catch (Exception ex)
             {
@@ -43,6 +40,31 @@ namespace EmployesHierarchy
                 Console.ReadLine();
             }
             Console.ReadLine();
+        }
+
+        private void CreateHierarchy(Employee objEmp)
+        {
+            try
+            {
+                Console.WriteLine(objEmp.EmployeeName);
+
+                foreach (Employee subEmp in objEmp.Team)
+                {
+                    Console.WriteLine(tabs + " | " + subEmp.EmployeeName);
+                    ListSubUser(subEmp);
+                }
+
+                Console.WriteLine("Want to exit (Y/N)");
+                string value = Console.ReadLine();
+                if(value.ToUpper() == "N" )
+                {
+                    Create();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private int readInputId()
@@ -59,17 +81,19 @@ namespace EmployesHierarchy
             return empId;
         }
 
-        private void ListSubUser(Employee objEmp, int emploId)
+
+
+        private void ListSubUser(Employee emplo)
         {
-            var level1Emp = new List<Employee>(objEmp.GetSubordinates(employees, emploId));
-            if (level1Emp != null && level1Emp.Any())
+            //var level1Emp = new List<Employee>(_objEmp.GetSubordinates(_employees, emplo));
+            if (emplo != null && emplo.Team != null && emplo.Team.Any())
             {
                 tabs.Append("\t");
                 
-                foreach (Employee emp in level1Emp)
+                foreach (Employee emp in emplo.Team)
                 {
                     Console.WriteLine(tabs + " | " + emp.EmployeeName);
-                    ListSubUser(objEmp, emp.Id);
+                    ListSubUser(emp);
                 }
 
                 tabs.Remove(tabs.Length - 1, tab.Length);

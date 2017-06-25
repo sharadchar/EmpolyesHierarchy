@@ -7,6 +7,8 @@ namespace EmployesHierarchy
         //Setup data
         public List<Employee> GetEmployes()
         {
+            //This can have logic to get the data from database
+            
             return new List<Employee>()
             {
                 new Employee{EmployeeName="Alan",Id=100,ManagerId=150},
