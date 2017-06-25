@@ -70,16 +70,9 @@
         </Employee>
         <Employee>
           <EmployeeName>DavidA1</EmployeeName>
-          <Id>191</Id>
+          <Id>193</Id>
           <ManagerId>400</ManagerId>
-          <Team>
-            <Employee>
-              <EmployeeName>DavidAH</EmployeeName>
-              <Id>192</Id>
-              <ManagerId>191</ManagerId>
-              <Team />
-            </Employee>
-          </Team>
+          <Team />
         </Employee>
       </Team>
     </Employee>
