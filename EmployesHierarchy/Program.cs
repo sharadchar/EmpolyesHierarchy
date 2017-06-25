@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using EmployesData;
@@ -19,10 +18,10 @@ namespace EmployesHierarchy
             SetupEmployes dataObj = new SetupEmployes();
 
             CreateManagerHierarchy objCreateManagerHierarchy = new CreateManagerHierarchy(objEmp, dataObj);
-            
-            objCreateManagerHierarchy.Create();            
+
+            objCreateManagerHierarchy.Create();
         }
 
-        
+
     }
 }
