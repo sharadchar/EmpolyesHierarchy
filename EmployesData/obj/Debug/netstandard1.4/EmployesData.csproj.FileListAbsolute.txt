@@ -1,6 +1,0 @@
-D:\AngularJS\EmployesHierarchy\EmployesData\bin\Debug\netstandard1.4\EmployesData.deps.json
-D:\AngularJS\EmployesHierarchy\EmployesData\bin\Debug\netstandard1.4\EmployesData.dll
-D:\AngularJS\EmployesHierarchy\EmployesData\bin\Debug\netstandard1.4\EmployesData.pdb
-D:\AngularJS\EmployesHierarchy\EmployesData\obj\Debug\netstandard1.4\EmployesData.AssemblyInfo.cs
-D:\AngularJS\EmployesHierarchy\EmployesData\obj\Debug\netstandard1.4\EmployesData.dll
-D:\AngularJS\EmployesHierarchy\EmployesData\obj\Debug\netstandard1.4\EmployesData.pdb
