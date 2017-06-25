@@ -45,20 +45,31 @@
       <HintPath>..\packages\MSTest.TestFramework.1.1.11\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="HierarchyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmployesHierarchy\EmployesHierarchy.csproj">
-      <Project>{0bdf5e27-11cb-404c-995f-2685134c5026}</Project>
-      <Name>EmployesHierarchy</Name>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{f0ab8c4d-3f40-4a9b-9e56-b877d40b5034}</Project>
+      <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EmployesData\EmployesData.csproj">
+      <Project>{298fcf49-f9b0-4cfb-a5df-dbe321cdb0f0}</Project>
+      <Name>EmployesData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpectedResult\ExpectedSuccessTopManager.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpectedResult\ExpectedSuccessSubManager.txt" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

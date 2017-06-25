@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<Employee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EmployeeName>Alex</EmployeeName>
+  <Id>274</Id>
+  <ManagerId>100</ManagerId>
+  <Team>
+    <Employee>
+      <EmployeeName>AlexA</EmployeeName>
+      <Id>275</Id>
+      <ManagerId>274</ManagerId>
+      <Team />
+    </Employee>
+    <Employee>
+      <EmployeeName>AlexB</EmployeeName>
+      <Id>276</Id>
+      <ManagerId>274</ManagerId>
+      <Team>
+        <Employee>
+          <EmployeeName>AlexB1</EmployeeName>
+          <Id>277</Id>
+          <ManagerId>276</ManagerId>
+          <Team />
+        </Employee>
+      </Team>
+    </Employee>
+  </Team>
+</Employee>

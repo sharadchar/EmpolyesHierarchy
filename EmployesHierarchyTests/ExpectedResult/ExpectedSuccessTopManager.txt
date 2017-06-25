@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<Employee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EmployeeName>Jamie</EmployeeName>
+  <Id>150</Id>
+  <ManagerId xsi:nil="true" />
+  <Team>
+    <Employee>
+      <EmployeeName>Alan</EmployeeName>
+      <Id>100</Id>
+      <ManagerId>150</ManagerId>
+      <Team>
+        <Employee>
+          <EmployeeName>Martin</EmployeeName>
+          <Id>220</Id>
+          <ManagerId>100</ManagerId>
+          <Team />
+        </Employee>
+        <Employee>
+          <EmployeeName>Alex</EmployeeName>
+          <Id>274</Id>
+          <ManagerId>100</ManagerId>
+          <Team>
+            <Employee>
+              <EmployeeName>AlexA</EmployeeName>
+              <Id>275</Id>
+              <ManagerId>274</ManagerId>
+              <Team />
+            </Employee>
+            <Employee>
+              <EmployeeName>AlexB</EmployeeName>
+              <Id>276</Id>
+              <ManagerId>274</ManagerId>
+              <Team>
+                <Employee>
+                  <EmployeeName>AlexB1</EmployeeName>
+                  <Id>277</Id>
+                  <ManagerId>276</ManagerId>
+                  <Team />
+                </Employee>
+              </Team>
+            </Employee>
+          </Team>
+        </Employee>
+      </Team>
+    </Employee>
+    <Employee>
+      <EmployeeName>Steve</EmployeeName>
+      <Id>400</Id>
+      <ManagerId>150</ManagerId>
+      <Team>
+        <Employee>
+          <EmployeeName>David</EmployeeName>
+          <Id>190</Id>
+          <ManagerId>400</ManagerId>
+          <Team>
+            <Employee>
+              <EmployeeName>DavidA</EmployeeName>
+              <Id>191</Id>
+              <ManagerId>190</ManagerId>
+              <Team>
+                <Employee>
+                  <EmployeeName>DavidAH</EmployeeName>
+                  <Id>192</Id>
+                  <ManagerId>191</ManagerId>
+                  <Team />
+                </Employee>
+              </Team>
+            </Employee>
+          </Team>
+        </Employee>
+        <Employee>
+          <EmployeeName>DavidA1</EmployeeName>
+          <Id>191</Id>
+          <ManagerId>400</ManagerId>
+          <Team>
+            <Employee>
+              <EmployeeName>DavidAH</EmployeeName>
+              <Id>192</Id>
+              <ManagerId>191</ManagerId>
+              <Team />
+            </Employee>
+          </Team>
+        </Employee>
+      </Team>
+    </Employee>
+  </Team>
+</Employee>

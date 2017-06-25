@@ -1,0 +1,6 @@
+D:\AngularJS\EmployesHierarchy\Common\bin\Debug\netstandard1.4\Common.deps.json
+D:\AngularJS\EmployesHierarchy\Common\obj\Debug\netstandard1.4\Common.AssemblyInfo.cs
+D:\AngularJS\EmployesHierarchy\Common\bin\Debug\netstandard1.4\Common.dll
+D:\AngularJS\EmployesHierarchy\Common\bin\Debug\netstandard1.4\Common.pdb
+D:\AngularJS\EmployesHierarchy\Common\obj\Debug\netstandard1.4\Common.dll
+D:\AngularJS\EmployesHierarchy\Common\obj\Debug\netstandard1.4\Common.pdb

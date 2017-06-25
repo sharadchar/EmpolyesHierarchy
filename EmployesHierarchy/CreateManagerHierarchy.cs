@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using EmployesData;
 
 namespace EmployesHierarchy
 {
@@ -37,7 +38,7 @@ namespace EmployesHierarchy
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message + " - " + ex.InnerException.Message);
+                Console.WriteLine(ex.Message);
                 Console.ReadLine();
             }
         }
@@ -84,6 +85,12 @@ namespace EmployesHierarchy
             if (result == false)
             {
                 Console.WriteLine("ManagerID Not Valid!!");
+                return readInputId();
+            }
+            bool exist = _employees.Where(x => x.Id == empId).Any();
+            if (!exist)
+            {
+                Console.WriteLine("No Employee With ID=" + empId + " Exist!!");
                 return readInputId();
             }
             return empId;
